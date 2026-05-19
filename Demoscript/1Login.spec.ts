@@ -13,9 +13,20 @@ test('Open Google and verify title', async ({ page }) => {
 
 
 // git init     
-// git add .  
-// git commit -m "init dev branch"
-// git push -u origin dev   
+// 1. Làm việc trên dev
+// git add .
+// git commit -m "update feature"
+// git push origin dev
+// 2. Merge dev → main
+// git checkout main
+// git pull origin main
+// git merge dev
+// git push origin main
+
+
+
+
+
 // git checkout -b dev   
 
 
