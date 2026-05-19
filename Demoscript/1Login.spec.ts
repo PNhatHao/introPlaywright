@@ -20,7 +20,22 @@ test('Open Google and verify title', async ({ page }) => {
 
 
 
+// ⚠️ Nếu bị lỗi “remote origin already exists”
+// Chạy:
+// git remote remove origin
+// git remote add origin https://github.com/PNhatHao/introPlaywright.git
+// git remote -v
+// git push -u origin dev
 
+// 2. Tạo main từ dev (nếu main chưa có code)
+// git checkout dev
+// git checkout -b main
+// git push -u origin main
+// 3. Hoặc merge dev → main (chuẩn công ty hơn)
+// git checkout main
+// git merge dev
+// git push origin main
+// update
 
 
 
