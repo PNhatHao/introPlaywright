@@ -1,15 +1,11 @@
-// npx playwright test tests/5auth.spec.ts --debug --project=chromium
-// npx playwright test tests/5logout.spec.ts --debug --project=chromium
-// // Full Production-like Playwright Test
-
 import { test, expect }
-  from '../fixture/5auth.fixture';
+  from '@fixtures/auth.fixture';
 
 import { SecureAreaPage }
-  from '../5LoginPage/SecureAreaPage';
+  from '@pages/SecureAreaPage';
 
 import { FlashMessage }
-  from '../5components/FlashMessage';
+  from '@components/FlashMessage';
 
 test.describe(
   'Authentication Suite',
@@ -53,3 +49,6 @@ test.describe(
     });
 
 });
+// npx playwright test tests/5auth.spec.ts --debug --project=chromium
+// npx playwright test tests/5logout.spec.ts --debug --project=chromium
+// // Full Production-like Playwright Test

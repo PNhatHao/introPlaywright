@@ -1,12 +1,8 @@
-// npx playwright test tests/5auth.spec.ts --debug --project=chromium
-// npx playwright test tests/5logout.spec.ts --debug --project=chromium
-// // Full Production-like Playwright Test
-
 import { test, expect }
-  from '../fixture/5auth.fixture';
+  from '@fixtures/auth.fixture';
 
 import { Navbar }
-  from '../5components/Navbar';
+  from '@components/Navbar';
 
 test.describe(
   'Logout Flow',
@@ -36,3 +32,25 @@ test.describe(
     });
 
 });
+
+
+// my-playwright-framework/
+// │
+// ├── pages/
+// │   ├── LoginPage.ts
+// │   ├── SecureAreaPage.ts
+// │
+// ├── components/
+// │   ├── FlashMessage.ts
+// │   ├── Navbar.ts
+// │
+// ├── fixtures/
+// │   ├── auth.fixture.ts
+// │
+// ├── tests/
+// │   ├── auth.spec.ts
+// │   ├── logout.spec.ts
+// │
+// ├── playwright.config.ts
+// │
+// ├── package.json

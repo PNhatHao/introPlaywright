@@ -1,6 +1,4 @@
-// npx playwright test fixture tests/heroku.spec.ts --debug --project=chromium 
-
-import { test, expect } from '../fixtures/auth.fixture';
+import { test, expect } from '../fixtures1/auth1.fixture';
 
 test.describe('Production-like Heroku Suite', () => {
 
@@ -67,21 +65,3 @@ test.describe('Production-like Heroku Suite', () => {
   });
 
 });
-
-
-// Nếu bạn muốn bước tiếp theo
-
-// Tui có thể giúp bạn build luôn:
-
-// 🔥 Full Enterprise Playwright Framework
-
-// gồm:
-
-// Page Object Model
-// API layer
-// Fixture layer
-// Test data factory
-// CI pipeline structure
-// flaky test handling system
-
-// Chỉ cần nói: "scale lên production framework"

@@ -215,16 +215,3 @@ test.describe('Herokuapp Production-like Suite', () => {
   });
 
 });
-
-
-
-
-
-
-
-
-
-// npx playwright test Demoscript/4run.spec.ts --debug --project=chromium  
-// npx playwright test Demoscript/2LoginTest.spec.ts --repeat-each=10
-          
-// npx playwright test Demoscript/4run.spec.ts --trace on          // npx playwright show-trace trace.zip

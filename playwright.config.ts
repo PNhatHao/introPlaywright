@@ -1,9 +1,15 @@
+import './utils/env'; // Day 6
 import { defineConfig, devices } from '@playwright/test';
+// import * as dotenv from 'dotenv';
 
 const isCI = !!process.env.CI;
 //-------- AI
 // const isCI = process.env.CI === 'true';
 
+// ---------
+// dotenv.config({
+//   path: './env/.env.local'
+// });
 
 
 
@@ -35,24 +41,12 @@ export default defineConfig({
 
   workers: isCI ? 1 : undefined,
 // Day 5---------------
-  timeout: 30000,
-  expect: {
-    timeout: 5000
-  }, //----------
-
+  // timeout: 30000,
+  // expect: {
+  //   timeout: 5000
+  // }, 
   // retries: 1,
 
-
-  // // ------- AI bảo khóa
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
-  // forbidOnly: !!process.env.CI,
-  // /* Retry on CI only */
-  // retries: process.env.CI ? 2 : 0,
-  // /* Opt out of parallel tests on CI. */
-  // workers: process.env.CI ? 1 : undefined,
-  
-  //--------------------------
-  
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
   ['html']
@@ -64,6 +58,13 @@ export default defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     baseURL:'https://the-internet.herokuapp.com', // Day 5
+
+
+    // "paths": {
+    //   "@pages/*": ["pages/*"],
+    //   "@components/*": ["components/*"]
+    // },
+
     trace: 'on-first-retry',
 
     // ----------------- AI thêm
