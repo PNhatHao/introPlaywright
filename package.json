@@ -1,11 +1,15 @@
 {
-  "name": "my-playwright-demo",
+  "name": "my-playwright-production-framework",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": { 
     "test": "playwright test", 
     "test:headed": "playwright test --headed",
-    "test:debug": "playwright test --debug"
+    "test:debug": "playwright test --debug",
+    "smoke":"playwright test tests/smoke", 
+    "regression":  "playwright test tests/regression",
+    "ci":  "playwright test --workers=4 --retries=2",
+    "report":"playwright show-report"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +17,8 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.54.2",
-    "@types/node": "^24.2.0"
+    "@types/node": "^24.2.0",
+     "typescript": "^5.0.0"
   },
   "dependencies": {
     "dotenv": "^17.4.2"

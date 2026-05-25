@@ -8,7 +8,9 @@
       "@pages/*": ["pages/*"],
       "@components/*": ["components/*"],
       "@utils/*": ["utils/*"],
-      "@fixtures/*": ["fixtures/*"]
+      "@fixtures/*": ["fixtures/*"],
+      "@config/*": ["config/*"],
+      "@helpers/*": ["helpers/*"]
     },
 
     "types": ["node", "@playwright/test"],
@@ -24,6 +26,8 @@
     "pages",
     "components",
     "fixtures",
-    "utils"
-  ]
+    "utils",
+    "config",
+    "helpers" 
+, "Demoscript/Demo/1flaky.spec.ts", "Demoscript/Demo/2Locator.spec.ts", "Demoscript/Demo/3assertion.spec.ts", "Demoscript/Demo/4Strategy.spec.ts", "Demoscript/Demo/5auth.spec.ts", "Demoscript/Demo/5logout.spec.ts", "Demoscript/Demo/5debug.spec.ts", "Demoscript/Demo1/fixtures1", "Demoscript/Demo1/tests"  ]
 }

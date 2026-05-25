@@ -6,8 +6,5 @@ const environment =
 dotenv.config({
   path: `./env/.env.${environment}`
 });
-
-console.log(
-  'USER_STANDARD:',
-  process.env.USER_STANDARD // Debug Day 6
-);
+console.log('[ENV]',environment);
+//console.log('USER_STANDARD:',process.env.USER_STANDARD) // Debug Day 6;

@@ -3,7 +3,8 @@ export function logStep(
 ) {
 
   console.log(
-    `[TEST STEP]: ${message}`
+    `[${new Date().toISOString()}]
+    ${message}`
   );
 
 }

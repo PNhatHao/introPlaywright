@@ -14,17 +14,21 @@ test.describe(
   test(
     'user can login successfully',
     async ({ loggedInPage }) => {
+    // ==============================
+    // EXPLICIT SETUP BOUNDARY
+    // ==============================
+    const page = loggedInPage;
 
       const securePage =
         new SecureAreaPage(
-          loggedInPage
+          page
         );
 
-      const flash =
-        new FlashMessage(
-          loggedInPage
-        );
+      const flash = new FlashMessage(  page );
 
+    // ==============================
+    // BUSINESS ASSERTIONS
+    // ==============================
       await expect(
         securePage.heading
       ).toBeVisible();
@@ -36,15 +40,12 @@ test.describe(
       );
 
       await expect(
-        loggedInPage
-          .locator('#flash')
+        flash.alert // loggedInPage.locator('#flash')  // was duplicate abstraction securePage.flashMessage
       ).toContainText(
         'You logged into a secure area!'
       );
 
-      console.log(
-        await flash.getText()
-      );
+      // console.log(await flash.getText() ); // không nên để trong regression test
 
     });
 

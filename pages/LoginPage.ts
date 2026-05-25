@@ -44,12 +44,10 @@ export class LoginPage {
 
     await Promise.all([
 
-      this.page.waitForURL(/secure/),
+      this.page.waitForURL(/secure/), // URL is business contract
 
       this.loginButton.click()
 
     ]);
-
   }
-
 }

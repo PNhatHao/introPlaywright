@@ -5,6 +5,10 @@ export class SecureAreaPage {
   readonly page: Page;
 
   readonly heading: Locator;
+  
+  
+  readonly flashMessage: Locator;
+  readonly logoutButton: Locator;
 
   constructor(page: Page) {
 
@@ -16,6 +20,9 @@ export class SecureAreaPage {
         exact: true
       });
 
+   this.flashMessage = page.locator('#flash');
+   this.logoutButton = page.getByRole('link',{name:'Logout'});
   }
+  async logout(){await this.logoutButton.click();}
 
 }

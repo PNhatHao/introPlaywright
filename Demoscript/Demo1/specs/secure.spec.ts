@@ -1,6 +1,6 @@
 // npx playwright test fixture tests/heroku.spec.ts --debug --project=chromium 
 
-import { test, expect } from '../fixtures1/auth1.fixture';
+import { test, expect } from '../../Demoscript/Demo1/fixtures1/auth1.fixture';
 
 test.describe('Secure Area Suite', () => {
 

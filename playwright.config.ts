@@ -1,6 +1,5 @@
-import './utils/env'; // Day 6
+import './config/env'; // Day 6
 import { defineConfig, devices } from '@playwright/test';
-// import * as dotenv from 'dotenv';
 
 const isCI = !!process.env.CI;
 //-------- AI
@@ -39,12 +38,12 @@ export default defineConfig({
 
   retries: isCI ? 2 : 0,
 
-  workers: isCI ? 1 : undefined,
+  workers: isCI ? 4 : undefined, // workers: isCI ? 1  -> 2
 // Day 5---------------
-  // timeout: 30000,
-  // expect: {
-  //   timeout: 5000
-  // }, 
+  timeout: 30000,
+  expect: {
+    timeout: 5000
+  }, 
   // retries: 1,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -82,16 +81,17 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
+// -----------
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
+//--------------
 
     /* Test against mobile viewports. */
     // {
