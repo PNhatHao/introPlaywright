@@ -1,5 +1,4 @@
-import { Page }
-from '@playwright/test';
+import { Page } from '@playwright/test';
 
 export async function mockLoginApi(
   page: Page

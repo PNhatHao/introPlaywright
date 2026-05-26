@@ -2,42 +2,26 @@ import './config/env'; // Day 6
 import { defineConfig, devices } from '@playwright/test';
 
 const isCI = !!process.env.CI;
-//-------- AI
 // const isCI = process.env.CI === 'true';
-
-// ---------
-// dotenv.config({
-//   path: './env/.env.local'
-// });
-
-
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// import dotenv from 'dotenv';
-// import path from 'path';
-// dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  // // Hao update ->testDir
   // testDir: './Demo script',
-
   /* Run tests in files in parallel */
   fullyParallel: true,
   
   // =====================================================
   // CI SAFETY
   // =====================================================
-
   forbidOnly: isCI,
-
   retries: isCI ? 2 : 0,
-
   workers: isCI ? 4 : undefined, // workers: isCI ? 1  -> 2
 // Day 5---------------
   timeout: 30000,
@@ -47,6 +31,7 @@ export default defineConfig({
   // retries: 1,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  globalSetup: './auth/global.setup.ts', // // add .gitignore-------------
   reporter: [
   ['html']
   ],
@@ -56,23 +41,14 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    storageState: 'auth/auth.json',
     baseURL:'https://the-internet.herokuapp.com', // Day 5
-
-
-    // "paths": {
-    //   "@pages/*": ["pages/*"],
-    //   "@components/*": ["components/*"]
-    // },
-
     trace: 'on-first-retry',
-
-    // ----------------- AI thêm
     headless: true,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
     actionTimeout: 10000,
     navigationTimeout: 15000
-    // ------------
   },
 
   /* Configure projects for major browsers */

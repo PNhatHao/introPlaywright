@@ -27,11 +27,13 @@ export class LoginPage {
 
   }
 
-  async goto() {
-
-    await this.page.goto('/login');
-
-  }
+  //async goto() {    await this.page.goto('/login');}
+    async goto(baseURL?: string) {
+    const url = baseURL
+        ? `${baseURL}/login`
+        : '/login';
+    await this.page.goto(url);
+    }
 
   async login(
     username: string,

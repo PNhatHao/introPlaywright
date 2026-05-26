@@ -1,10 +1,10 @@
-export function createRandomUser() {
+export function createUser() {
 
-  const randomId =    Date.now();
+  const uniqueId  =    Date.now();
 
   return {
-    username:      `user-${randomId}`,
-    email:      `user-${randomId}@test.com`,
-    password:      'Password123!'
+    username: `user-${uniqueId}`,
+    email: `user-${uniqueId}@gmail.com`,
+    password: 'Password123!'
   };
 }
