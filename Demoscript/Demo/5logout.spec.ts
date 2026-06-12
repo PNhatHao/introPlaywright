@@ -35,19 +35,17 @@ test.describe(
 
 });
 
-
+// npx playwright test multi-context-chat.spec.ts --debug --project=chromium
 // playwright-production-framework/
 // │
 // ├── env/
 // │   ├── .env.local
-// │   └── .env.staging
 // │
 // ├── auth/
 // │   ├── auth.json
 // │   └── global.setup.ts
 // │
 // ├── config/
-// │   ├── env.ts
 // │   ├── credentials.ts
 // │   └── timeouts.ts
 // │
@@ -60,6 +58,8 @@ test.describe(
 // │   │   ├── upload.regression.spec.ts
 // │   │   ├── dynamic-loading.regression.spec.ts
 // │   │   ├── api-mocking.regression.spec.ts
+// │   │   ├── mock-api.regression.spec.ts
+// │   │   ├── hybrid-user.regression.spec.ts
 // │   │   └── isolation.regression.spec.ts
 // │   │
 // │   └── multi-user/
@@ -84,16 +84,31 @@ test.describe(
 // │   ├── admin.fixture.ts
 // │   └── api.fixture.ts
 // │
+// ├── api/
+// │   ├── auth.api.ts
+// │   ├── user.api.ts
+// │   └── order.api.ts
+// │
 // ├── factories/
 // │   └── user.factory.ts
 // │
 // ├── helpers/
 // │   ├── logger.ts
+// │   ├── api-client.ts
 // │   └── api-helper.ts
+// │   └── response-validator.ts
 // │   └── auth-helper.ts
 // │
 // ├── utils/
+// │   ├── env.ts
+// │   └── auth-state.ts
 // │   └── file-path.ts
+// │
+// ├── test-data/
+// │   ├── users.ts
+// │   ├── constants.ts
+// │   └── factories/
+// │       └── user.factory.ts
 // │
 // ├── playwright.config.ts
 // ├── package.json

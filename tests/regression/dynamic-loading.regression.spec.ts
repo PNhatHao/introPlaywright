@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-
 import { DynamicLoadingPage } from '@pages/DynamicLoadingPage';
 
 test.describe(
@@ -11,11 +10,9 @@ test.describe(
     async ({ page }) => {
 
       const dynamicPage = new DynamicLoadingPage(page);
-
       await dynamicPage.goto();
-
       await dynamicPage.startLoading();
-
+      await dynamicPage.waitForLoaded();
       await expect(
         dynamicPage.finishText
       ).toContainText(

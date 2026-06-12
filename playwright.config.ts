@@ -1,4 +1,4 @@
-import './config/env'; // Day 6
+import './utils/env'; // Day 6
 import { defineConfig, devices } from '@playwright/test';
 
 const isCI = !!process.env.CI;
@@ -22,7 +22,7 @@ export default defineConfig({
   // =====================================================
   forbidOnly: isCI,
   retries: isCI ? 2 : 0,
-  workers: isCI ? 4 : undefined, // workers: isCI ? 1  -> 2
+  workers: isCI ? 1 : undefined, // workers: isCI ? 1  -> 2
 // Day 5---------------
   timeout: 30000,
   expect: {
@@ -31,7 +31,7 @@ export default defineConfig({
   // retries: 1,
 
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  globalSetup: './auth/global.setup.ts', // // add .gitignore-------------
+  globalSetup: require.resolve('./global.setup'), // // add .gitignore-------------
   reporter: [
   ['html']
   ],
@@ -41,7 +41,7 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    storageState: 'auth/auth.json',
+    storageState: './auth/auth.json',
     baseURL:'https://the-internet.herokuapp.com', // Day 5
     trace: 'on-first-retry',
     headless: true,

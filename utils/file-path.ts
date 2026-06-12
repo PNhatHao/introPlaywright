@@ -5,4 +5,4 @@ export const uploadFilePath =
     process.cwd(),
     // 'avatar.png',
     'test-data/avatar.png',   
-  );  // C:\Users\ASUS\AppData\Local\ms-playwright\firefox-1522      // --trace on    --debug --project=chromium
+  );  // C:\Users\ASUS\AppData\Local\ms-playwright\firefox-1522      // --trace on    
